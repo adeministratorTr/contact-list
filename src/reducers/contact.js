@@ -29,7 +29,19 @@ export default (state = INITIAL_STATE, action) => {
         .reduce((acc, curr) => {
           const currentLastNameCharacter = curr.name.last[0].charAt(0).toLowerCase()
           if (!acc[currentLastNameCharacter]) acc[currentLastNameCharacter] = []
-          acc[currentLastNameCharacter].push(curr)
+          acc[currentLastNameCharacter].push({
+            firstName: curr.name.first,
+            lastName: curr.name.last,
+            email: curr.email,
+            phone: curr.phone,
+            streetNumber: curr.location.street.number,
+            streetName: curr.location.street.name,
+            city: curr.location.city,
+            state: curr.location.state,
+            postcode: curr.location.postcode,
+            username: curr.login.username,
+            profilePicture: curr.picture.large
+          })
           return acc
         }, {})
 

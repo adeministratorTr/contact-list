@@ -34,7 +34,7 @@ function ContactList({ contactList, fetchContactList, ...props }) {
     <ListingGroup>
       {Object.values(selectedCategory[1])
         .map((contact, i) =>
-          <Contact key={i}>{contact.name.first}, {contact.name.last}</Contact>
+          <Contact key={i}>{contact.firstName}, {contact.lastName.toUpperCase()}</Contact>
         )}
     </ListingGroup>
   )
