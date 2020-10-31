@@ -1,3 +1,5 @@
+import ContacList from './pages/contact-list'
+
 import './App.css';
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <ContacList />
     </div>
   );
 }
