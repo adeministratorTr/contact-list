@@ -1,5 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { TYPES } from '../actions/contact'
+import { filterNonAlphabetic } from '../helpers/filter'
 
 export const INITIAL_STATE = {
   contactList: {
@@ -23,6 +24,7 @@ export default (state = INITIAL_STATE, action) => {
 
     case TYPES.GET_CONTACT_LIST_SUCCESS:
       const contactsGroupByLastName = action.payload
+        .filter(item => filterNonAlphabetic(item.name.last[0].toLowerCase()))
         .sort((first, second) => first.name.last.toLowerCase().localeCompare(second.name.last.toLowerCase()))
         .reduce((acc, curr) => {
           const currentLastNameCharacter = curr.name.last[0].charAt(0).toLowerCase()
