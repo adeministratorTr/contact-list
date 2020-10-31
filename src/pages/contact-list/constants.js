@@ -1,0 +1,1 @@
+export const DEFAULT_RESULT_NUMBER = 100
