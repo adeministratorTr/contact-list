@@ -1,0 +1,24 @@
+// TODO: use variable
+
+.group__button {
+  display: flex;
+  flex-direction: row;
+  color: red;
+  min-height: 40px;
+  min-width: 30px;
+  background-color: #eeeeee;
+
+  &__text {
+    display: flex;
+    align-self: center;
+    margin: 0;
+    font-size: 18px
+  }
+
+  &__length {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 0 2px;
+    font-size: 10px
+  }
+}
