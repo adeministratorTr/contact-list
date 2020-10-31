@@ -1,18 +1,28 @@
 import { useEffect } from "react"
-import { getUserListService } from '../../services/contact'
+import { connect } from 'react-redux'
 import { DEFAULT_RESULT_NUMBER } from './constants'
+import { fetchContactList } from '../../actions/contact'
 
-function ContactList() {
+function ContactList({ contactList, fetchContactList, ...props }) {
 
   useEffect(() => {
-    getUserListService({ limit: DEFAULT_RESULT_NUMBER })
-  }, [])
+    fetchContactList({ limit: DEFAULT_RESULT_NUMBER })
+  }, [fetchContactList])
 
   return (
     <div>
-      <p>contact listing page</p>
+      {contactList.isLoading && <p>Loading...</p>}
+      {!contactList.isLoading && contactList.error && <p>Opps. Something wrong. Detail: {contactList.error}</p>}
+      {!contactList.isLoading && contactList.contacts.length === 0 && <p>Couldn't find any contact :(</p>}
+      {!contactList.isLoading && contactList.contacts.length > 0 && contactList.contacts[0].name.first}
     </div>
   )
 }
 
-export default ContactList
+export default connect(
+  (state) => ({
+    contactList: state.contact.contactList
+  }), {
+  fetchContactList
+}
+)(ContactList)

@@ -1,6 +1,6 @@
 import { servicesConstants } from './constants'
 
-export const getUserListService = ({ limit }) => {
+export const getContactListService = ({ limit }) => {
   const params = new URLSearchParams()
 
   params.append('results', limit)
