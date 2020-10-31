@@ -1,4 +1,9 @@
 // TODO: use variables
 .listing__container {
   background-color: #eeeeee;
+  margin: 0 auto;
+  padding: 20px;
+  -webkit-columns: 2 250px;
+     -moz-columns: 2 250px;
+          columns: 2 250px;
 }
