@@ -3,10 +3,12 @@
 .group__button {
   display: flex;
   flex-direction: row;
-  color: red;
   min-height: 40px;
   min-width: 30px;
+  width: 100%;
   background-color: #eeeeee;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 20%;
 
   &__text {
     display: flex;
@@ -15,7 +17,7 @@
     font-size: 18px
   }
 
-  &__length {
+  &__number {
     display: flex;
     align-items: flex-end;
     margin: 0 0 0 2px;
