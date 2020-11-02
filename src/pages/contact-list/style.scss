@@ -1,9 +1,15 @@
-.contact__list__container {
+.contact__list {
   display: flex;
   flex-direction: column;
+  
+  &__group {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 .categorize__button__container{ 
   display: flex;
   margin: 0 auto;
+  justify-content: center;
 }

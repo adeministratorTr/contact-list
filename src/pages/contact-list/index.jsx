@@ -5,15 +5,22 @@ import { fetchContactList } from '../../actions/contact'
 import { Button } from '../../components/Button'
 import { Contact } from '../../components/Contact'
 import { ListingGroup } from '../../components/ListingGroup'
+import { UserDetailPopup } from '../../components/UserDetailPopup'
 
 import './style.scss'
 
 function ContactList({ contactList, fetchContactList, ...props }) {
   const [selectedCategory, setSelectedCategory] = useState({})
+  const [selectedContact, setSelectedContact] = useState({})
 
   useEffect(() => {
     fetchContactList({ limit: DEFAULT_RESULT_NUMBER })
   }, [fetchContactList])
+
+  const handleCategoryButtonClick = (pair) => {
+    setSelectedContact({})
+    setSelectedCategory(pair)
+  }
 
   const renderCategoryButtons = () => (
     <div className="categorize__button__container">
@@ -24,7 +31,7 @@ function ContactList({ contactList, fetchContactList, ...props }) {
             type={'group'}
             text={pair[0]}
             length={pair[1].length}
-            onClick={() => setSelectedCategory(pair)}
+            onClick={() => handleCategoryButtonClick(pair)}
           />
         )}
     </div>
@@ -32,23 +39,39 @@ function ContactList({ contactList, fetchContactList, ...props }) {
 
   const renderCategoryItems = () => (
     <ListingGroup>
-      {Object.values(selectedCategory[1])
-        .map((contact, i) =>
-          <Contact key={i}>{contact.firstName}, {contact.lastName.toUpperCase()}</Contact>
-        )}
+      {Object.values(selectedCategory[1]).map((contact, i) =>
+        <Contact
+          key={i}
+          onClick={() => setSelectedContact(contact)}
+        >
+          {contact.firstName}, {contact.lastName.toUpperCase()}</Contact>
+      )}
     </ListingGroup>
   )
 
   return (
-    <div className="contact__list__container">
+    <div className="contact__list">
       <h1>Contact List</h1>
       {contactList.isLoading && <p>Loading...</p>}
       {!contactList.isLoading && contactList.error && <p>Opps. Something wrong. Detail: {contactList.error}</p>}
       {!contactList.isLoading && Object.entries(contactList.contactsGroupByLastName).length > 0 &&
-        <>
+        <div className="contact__list__group" >
           {renderCategoryButtons()}
           {selectedCategory[1] && renderCategoryItems()}
-        </>}
+        </div>}
+      {selectedContact && selectedContact.email &&
+        <UserDetailPopup
+          imageSource={selectedContact.profilePicture}
+          fullName={`${selectedContact.lastName.toUpperCase()}, ${selectedContact.firstName}`}
+          email={selectedContact.email}
+          phone={selectedContact.phone}
+          street={`${selectedContact.streetNumber} ${selectedContact.streetName}`}
+          city={selectedContact.city}
+          state={selectedContact.state}
+          postcode={selectedContact.postcode}
+          username={selectedContact.username}
+          onClose={() => setSelectedContact({})}
+        />}
     </div>
   )
 }
