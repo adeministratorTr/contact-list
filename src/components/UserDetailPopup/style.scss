@@ -1,0 +1,74 @@
+.user__detail__popup {
+  width: 620px;
+  opacity: 1;
+  display: flex;
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  &__close {
+    font-size: 12px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin: 25px 0 0 15px;
+  }
+
+  &__info {
+    margin: 20px 0 0 15px;
+    width: 400px;
+
+    &__fullname {
+      display: flex;
+      margin: 0;
+    }
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+
+      &__item {
+        display: flex;
+        width: 100%;
+        margin: 5px 0;
+
+        .key {
+          display: flex;
+          min-width: 70px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .value {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__username {
+    position: relative;
+    top: 10px;
+    left: 60px;
+    font-size: 12px;
+    background-color: #b43c32;
+    color: white;
+    width: auto;
+    height: 20px;
+    transform: rotate(90deg);
+    margin-top: 50px;
+    margin-left: -150px;
+    padding: 10px 10px 25px 10px;
+  }
+}
