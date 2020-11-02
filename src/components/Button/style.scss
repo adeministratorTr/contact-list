@@ -11,6 +11,10 @@
   border-top-left-radius: 20%;
   justify-content: center;
 
+  &:focus {
+    outline: 0;
+  }
+
   &__text {
     display: flex;
     align-self: center;
@@ -24,4 +28,17 @@
     margin: 15px 0 0 2px;
     font-size: 10px
   }
+} 
+
+.group__button--active {
+  display: flex;
+  flex-direction: row;
+  min-height: 40px;
+  min-width: 30px;
+  width: 100%;
+  background-color: #eeeeee;
+  border-top-right-radius: 20%;
+  border-top-left-radius: 20%;
+  justify-content: center;
+  border-bottom: none;
 }
