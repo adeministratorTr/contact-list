@@ -1,6 +1,14 @@
 // TODO: use variables
 .contact {
+  flex: 0 45%;
   border-bottom: 1px dotted black;
   padding: 10px;
-  margin: 0;
+  margin: 0 auto;
+}
+
+@media (max-width:760px) {
+  .contact {
+    padding: 10px;
+    width: 100%;
+  }
 }

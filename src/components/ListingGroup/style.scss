@@ -1,9 +1,19 @@
 // TODO: use variables
 .listing__container {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #eeeeee;
   margin: 0 auto;
   padding: 20px;
-  -webkit-columns: 2 250px;
-     -moz-columns: 2 250px;
-          columns: 2 250px;
+
+  // & :last-child {
+    // TODO: align last child to left
+    // border: 1px solid red;
+  // }
+}
+
+@media (max-width:760px) {
+  .listing__container {
+    flex-direction: column;
+  }
 }
