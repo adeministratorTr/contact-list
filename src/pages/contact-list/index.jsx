@@ -31,6 +31,7 @@ function ContactList({ contactList, fetchContactList, ...props }) {
             type={'group'}
             text={pair[0]}
             length={pair[1].length}
+            active={pair[0] === selectedCategory[0]}
             onClick={() => handleCategoryButtonClick(pair)}
           />
         )}
