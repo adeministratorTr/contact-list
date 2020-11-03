@@ -1,3 +1,5 @@
 {
-  "baseUrl": "https://floating-sands-82655.herokuapp.com/"
+  "baseUrl": "https://floating-sands-82655.herokuapp.com/",
+  "video": false,
+  "videoUploadOnPasses": false
 }
