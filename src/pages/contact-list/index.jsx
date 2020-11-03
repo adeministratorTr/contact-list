@@ -54,8 +54,8 @@ function ContactList({ contactList, fetchContactList, ...props }) {
     <div className="contact__list">
       <h1>Contact List</h1>
       {contactList.isLoading && <p>Loading...</p>}
-      {!contactList.isLoading && contactList.error && <p>Opps. Something wrong. Detail: {contactList.error}</p>}
-      {!contactList.isLoading && Object.entries(contactList.contactsGroupByLastName).length > 0 &&
+      {!contactList.isLoading && contactList.error && <p>Opps. Something wrong. Detail: {contactList.error.message}</p>}
+      {!contactList.isLoading && !contactList.error && Object.entries(contactList.contactsGroupByLastName).length > 0 &&
         <div className="contact__list__group" >
           {renderCategoryButtons()}
           {selectedCategory[1] && renderCategoryItems()}

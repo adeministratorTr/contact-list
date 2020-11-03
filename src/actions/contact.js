@@ -13,16 +13,16 @@ export const fetchContactList = ({ limit }) => dispatch => {
 
   return getContactListService({ limit })
     .then(response => {
-      response.results && !response.error &&
+      response.results && response.results.length > 0 &&
         dispatch({
           type: TYPES.GET_CONTACT_LIST_SUCCESS,
           payload: response.results
         })
 
-      response.error && !response.results &&
+      !response.results &&
         dispatch({
           type: TYPES.GET_CONTACT_LIST_ERROR,
-          error: response.error
+          error: response
         })
     })
     .catch(error => {
