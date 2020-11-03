@@ -6,6 +6,9 @@
   background-color: #eeeeee;
   margin: 0 auto;
   margin-top: 20px;
+  box-shadow: 
+    inset 0px 11px 8px -10px #aaaaaa,
+    inset 0px -11px 8px -10px #aaaaaa;
 
   &__close {
     font-size: 12px;
