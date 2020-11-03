@@ -12,7 +12,7 @@
   justify-content: center;
 
   &:focus {
-    outline: 0;
+    outline: none;
   }
 
   &__text {
@@ -43,4 +43,8 @@
   border-bottom: none;
   box-shadow: 
     inset 0px 11px 8px -10px #aaaaaa;
+
+  &:focus {
+    outline: none;
+  }
 }
