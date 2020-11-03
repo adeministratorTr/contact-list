@@ -2,7 +2,7 @@
 
 .user__detail__popup {
   position: relative;
-  width: 620px;
+  width: 460px;
   opacity: 1;
   display: flex;
   border: 1px solid $color-gray-primary;
@@ -33,10 +33,11 @@
   &__info {
     margin: 20px 0 0 15px;
     width: 400px;
+    height: 190px;
 
     &__fullname {
       display: flex;
-      margin: 0;
+      margin: 0 0 20px 0;
     }
 
     &__field {
@@ -47,7 +48,6 @@
       &__item {
         display: flex;
         width: 100%;
-        margin: 5px 0;
 
         .key {
           display: flex;
