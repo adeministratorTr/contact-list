@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .user__detail__popup {
+  position: relative;
   width: 620px;
   opacity: 1;
   display: flex;
@@ -63,17 +64,17 @@
   }
 
   &__username {
-    position: relative;
-    top: 10px;
-    left: 60px;
+    position: absolute;
+    top: -10px;
+    left: calc(100% - 10px);
+    white-space: nowrap;
     font-size: $font-sm;
     background-color: $color-red-secondary;
     color: white;
     width: auto;
-    height: 20px;
+    height: 40px;
     transform: rotate(90deg);
-    margin-top: 50px;
-    margin-left: -150px;
-    padding: 10px 10px 25px 10px;
+    transform-origin: 0 0;
+    padding: 10px 10px 10px 10px;
   }
 }
