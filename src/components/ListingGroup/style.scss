@@ -6,10 +6,6 @@
   background-color: $color-gray-primary;
   margin: 0 auto;
   padding: 20px;
-
-  & :last-child {
-    border: 1px solid red;
-  }
 }
 
 @media (max-width: $screen-md-max) {
