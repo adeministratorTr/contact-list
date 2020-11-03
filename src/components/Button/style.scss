@@ -1,4 +1,4 @@
-// TODO: use variable
+@import '../../styles/variables.scss';
 
 .group__button {
   display: flex;
@@ -6,7 +6,7 @@
   min-height: 40px;
   min-width: 30px;
   width: 100%;
-  background-color: #eeeeee;
+  background-color: $color-gray-primary;
   border-top-right-radius: 20%;
   border-top-left-radius: 20%;
   justify-content: center;
@@ -19,14 +19,14 @@
     display: flex;
     align-self: center;
     margin: 0;
-    font-size: 18px
+    font-size: $font-md;
   }
 
   &__number {
     display: flex;
     align-self: flex-end;
     margin: 15px 0 0 2px;
-    font-size: 10px
+    font-size: $font-sm;
   }
 } 
 
@@ -36,7 +36,7 @@
   min-height: 40px;
   min-width: 30px;
   width: 100%;
-  background-color: #eeeeee;
+  background-color: $color-gray-primary;
   border-top-right-radius: 20%;
   border-top-left-radius: 20%;
   justify-content: center;

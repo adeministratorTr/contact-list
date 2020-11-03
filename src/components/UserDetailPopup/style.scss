@@ -1,9 +1,11 @@
+@import '../../styles/variables.scss';
+
 .user__detail__popup {
   width: 620px;
   opacity: 1;
   display: flex;
-  border: 1px solid #eeeeee;
-  background-color: #eeeeee;
+  border: 1px solid $color-gray-primary;
+  background-color: $color-gray-primary;
   margin: 0 auto;
   margin-top: 20px;
   box-shadow: 
@@ -11,7 +13,7 @@
     inset 0px -11px 8px -10px #aaaaaa;
 
   &__close {
-    font-size: 12px;
+    font-size: $font-sm;
     position: relative;
     top: 5px;
     left: 5px;
@@ -39,7 +41,7 @@
     &__field {
       display: flex;
       flex-direction: column;
-      font-size: 12px;
+      font-size: $font-sm;
 
       &__item {
         display: flex;
@@ -64,8 +66,8 @@
     position: relative;
     top: 10px;
     left: 60px;
-    font-size: 12px;
-    background-color: #b43c32;
+    font-size: $font-sm;
+    background-color: $color-red-secondary;
     color: white;
     width: auto;
     height: 20px;

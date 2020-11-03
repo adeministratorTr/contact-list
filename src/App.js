@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ContacList from './pages/contact-list'
 import { NotFound } from './pages/not-found'
 import { URL_LIST } from './pages/urlList'
+import './styles/styles.scss'
 
 import './App.css';
 
